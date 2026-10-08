@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+.bg-checkerboard {
+  background-color: #1a1a1a;
+  background-image:
+    linear-gradient(45deg, #262626 25%, transparent 25%),
+    linear-gradient(-45deg, #262626 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #262626 75%),
+    linear-gradient(-45deg, transparent 75%, #262626 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Commercial Signage Animations (McDonald's / Fast-Food Style) */
+@keyframes shimmer-sweep {
+  0% { transform: translateX(-150%) skewX(-25deg); opacity: 0; }
+  15% { opacity: 0.9; }
+  45% { transform: translateX(250%) skewX(-25deg); opacity: 0.9; }
+  46%, 100% { transform: translateX(250%) skewX(-25deg); opacity: 0; }
+}
+
+@keyframes float-breathing {
+  0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+  50% { transform: translateY(-9px) rotate(0.8deg) scale(1.025); }
+}
+
+@keyframes price-pulse-impact {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0px transparent); }
+  14% { transform: scale(1.07); filter: drop-shadow(0 0 16px rgba(251, 191, 36, 0.4)); }
+  24% { transform: scale(1.02); }
+  34% { transform: scale(1.08); filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.5)); }
+  48% { transform: scale(1); }
+}
+
+@keyframes glow-expand-ring {
+  0%, 100% { transform: scale(1); opacity: 0.35; }
+  50% { transform: scale(1.22); opacity: 0.65; }
+}
+
+@keyframes particle-drift {
+  0% { transform: translateY(0px) translateX(0px); opacity: 0; }
+  20% { opacity: 0.6; }
+  80% { opacity: 0.6; }
+  100% { transform: translateY(-240px) translateX(30px); opacity: 0; }
+}
+
+.animate-shimmer-sweep {
+  animation: shimmer-sweep 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-float-product {
+  animation: float-breathing 3.8s ease-in-out infinite;
+}
+
+.animate-price-pulse {
+  animation: price-pulse-impact 2.8s ease-in-out infinite;
+}
+
+.animate-glow-ring {
+  animation: glow-expand-ring 3.4s ease-in-out infinite;
+}
+

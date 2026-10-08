@@ -1,0 +1,43 @@
+{
+  "entities": {
+    "SignageProject": {
+      "title": "SignageProject",
+      "description": "Contains digital signage configuration, slides, templates, categories, and settings synchronized between PC and TV display.",
+      "type": "object",
+      "properties": {
+        "slides": {
+          "type": "array",
+          "description": "List of active and scheduled slides"
+        },
+        "templates": {
+          "type": "array",
+          "description": "Display visual design templates"
+        },
+        "settings": {
+          "type": "object",
+          "description": "Global display configuration, timing, audio and music settings"
+        },
+        "categories": {
+          "type": "array",
+          "description": "List of product and slide categories"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the last modification"
+        },
+        "updatedBy": {
+          "type": "string",
+          "description": "Device or user who updated the config"
+        }
+      },
+      "required": ["slides", "templates", "settings", "categories"]
+    }
+  },
+  "firestore": {
+    "/signage/{signageId}": {
+      "schema": "SignageProject",
+      "description": "Real-time signage projects synced between editor (PC) and TV player display"
+    }
+  }
+}

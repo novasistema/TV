@@ -1,0 +1,6 @@
+{
+  "name": "DisplayTV Signage - Carrusel Mostrador",
+  "description": "Sistema de carrusel publicitario para televisores de mostrador con generación de copy por IA, eliminador de fondos de imágenes, programación horaria y bucle automático.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
